@@ -1,0 +1,101 @@
+# ===== 环境变量与密钥 =====
+.env
+.env.local
+.env.*.local
+
+# ===== 配置文件（含敏感信息）=====
+config.json
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# ===== DPU Core 黑盒二进制（必须提交）=====
+!dpu_core/*.pyd
+
+# ===== 虚拟环境 =====
+.venv/
+venv/
+ENV/
+
+# ===== 日志文件 =====
+*.log
+debug.log
+
+# ===== 数据库文件 =====
+*.db
+dpu_memory.db
+test_memory.db
+
+# ===== IDE =====
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== 前端 =====
+frontend/.next/
+frontend/node_modules/
+web/node_modules/
+node_modules/
+
+# ===== 测试与临时文件 =====
+.pytest_cache/
+.coverage
+htmlcov/
+*.tmp
+test_profile.json
+tests/stability_report.json
+
+# ===== 临时修复脚本（不应提交）=====
+web/merge_fix.py
+web/component_part.tsx
+web/fix_script.py
+web/fix_showoff.py
+
+# ===== Vite 构建时间戳文件 =====
+*.timestamp-*.mjs
+
+# ===== 前端构建产物（由 Vercel 构建，不提交）=====
+web/dist/
+
+# ===== 构建产物与压缩包 =====
+*.zip
+dpu-dist.zip
+DPU_showcase.zip
+dpu_core/*.c
+
+# ===== 文档（源文件保留，构建产物不提交）=====
+# docx 文件较大，按需提交
+
+# ===== CLAUDE 配置 =====
+.claude/
+
+# ===== 参赛/报名文案（非项目代码）=====
+参赛帖子*.md
+报名帖子*.md
+
+# ===== 架构文档（docx 较大，不上传 git）=====
+*.docx
+
+# ===== 展示/部署文件 =====
+project_showcase.html
+deploy_server.sh
+DEPLOYMENT_GUIDE.md
+
+# ===== 生产环境配置 =====
+web/.env.production
+
+# ===== base64 截图冗余文件 =====
+screenshots/*.b64

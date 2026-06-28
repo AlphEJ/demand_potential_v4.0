@@ -1,0 +1,7 @@
+# Vercel 只构建前端，忽略所有 Python 和后端相关文件
+*.py
+requirements.txt
+*.db
+__pycache__/
+.env
+.env.local

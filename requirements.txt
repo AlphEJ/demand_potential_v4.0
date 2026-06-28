@@ -1,0 +1,30 @@
+# DPU 需求势能引擎 v4.2 - 依赖清单
+# 安装方式: pip install -r requirements.txt
+
+# ===== 核心数值计算 =====
+numpy>=1.24.0
+
+# ===== LLM 客户端（通义千问/DeepSeek 使用 OpenAI 兼容 API）=====
+openai>=1.0.0
+requests>=2.31.0
+
+# ===== LangGraph Agent 框架 =====
+langgraph>=0.2.0
+langchain>=0.3.0
+langchain-openai>=0.2.0
+langchain-community>=0.3.0
+
+# ===== FastAPI 后端 =====
+fastapi>=0.115.0
+uvicorn>=0.32.0
+pydantic>=2.0.0
+
+# ===== 环境变量管理 =====
+python-dotenv>=1.0.0
+
+# ===== 向量语义匹配（v4.2）=====
+sentence-transformers>=2.7.0
+faiss-cpu>=1.8.0
+
+# ===== 测试 =====
+pytest>=7.0.0
