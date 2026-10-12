@@ -73,34 +73,24 @@ cd web && npm run dev
 DPU/
 ├── server.py                   # FastAPI 启动入口
 │
-├── dpu_core/                   # 核心算法引擎（编译二进制，🔒 闭源）
-│   ├── config.*.pyd            # 配置与超参数
-│   ├── matrix.*.pyd            # 12×12 需求关联矩阵
-│   ├── potential.*.pyd          # 势能计算引擎
-│   ├── suppression.*.pyd        # 层级压制机制
-│   ├── conflict.*.pyd          # 冲突仲裁
-│   ├── profile.*.pyd           # 贝叶斯用户画像
-│   ├── demands.py              # 12 维需求定义（开源）
-│   └── __init__.py             # 公共 API 导出
-│
-├── core/                       # 核心算法代理层
-│   ├── config.py               # → dpu_core.config
-│   ├── matrix.py               # → dpu_core.matrix
-│   ├── potential.py             # → dpu_core.potential
-│   ├── suppression.py           # → dpu_core.suppression
-│   ├── conflict.py              # → dpu_core.conflict
-│   ├── profile.py               # → dpu_core.profile
-│   ├── demands.py               # 12 维需求定义 + 关键词库
-│   ├── engine.py                # DPU 主引擎（Facade）
-│   ├── path_tracer.py           # 推理路径追踪
-│   ├── embedding_matcher.py     # 语义向量匹配
-│   ├── vector_store.py          # 向量存储
-│   └── demand_descriptions.py   # 需求维度详细描述
+├── core/                       # 核心算法层（全部开源）
+│   ├── config.py               # 全局配置与超参数
+│   ├── matrix.py               # 12×12 需求关联矩阵
+│   ├── potential.py            # 4 步势能计算引擎
+│   ├── suppression.py          # 层级压制机制
+│   ├── conflict.py             # 冲突仲裁
+│   ├── profile.py              # 贝叶斯用户画像
+│   ├── demands.py              # 12 维需求定义 + 关键词库
+│   ├── engine.py               # DPU 主引擎（Facade）
+│   ├── path_tracer.py          # 推理路径追踪
+│   ├── embedding_matcher.py    # 语义向量匹配
+│   ├── vector_store.py         # 向量存储
+│   └── demand_descriptions.py  # 需求维度详细描述
 │
 ├── api/                        # FastAPI 后端
 │   ├── main.py                 # 应用入口
 │   ├── models.py               # Pydantic 数据模型
-│   ├── middleware.py            # CORS / 日志 / 异常处理
+│   ├── middleware.py           # CORS / 日志 / 异常处理
 │   └── routes/
 │       ├── analyze.py          # 需求分析接口
 │       ├── chat.py             # Agent 对话接口
@@ -136,8 +126,6 @@ DPU/
 ├── utils/                      # 工具模块
 └── requirements.txt            # Python 依赖
 ```
-
-> **注意**：`dpu_core/` 目录下的 `.pyd` 文件为编译后的二进制模块，核心算法的实现细节受保护。`core/` 中对应的文件为代理层，保持 API 兼容。
 
 ## 12 维需求体系
 
