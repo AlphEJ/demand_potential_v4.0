@@ -5,14 +5,11 @@ DPU (Demand Processing Unit) Core Engine
 
 from .demands import NeedMeta, Demand, DemandSet
 from .demands import parse_demands_by_keywords, parse_demands_by_embedding
-
-# 黑盒模块通过 dpu_core 导入（避免循环导入）
-from dpu_core.config import DPUConfig
-from dpu_core.matrix import AssociationMatrix
-from dpu_core.potential import PotentialCalculator
-from dpu_core.suppression import LayerSuppression
-from dpu_core.conflict import ConflictArbiter
-
+from .matrix import AssociationMatrix
+from .config import DPUConfig
+from .potential import PotentialCalculator
+from .suppression import LayerSuppression
+from .conflict import ConflictArbiter
 from .engine import DemandPotentialEngine, DPUOutput
 
 # v4.2 新增
